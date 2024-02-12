@@ -34,3 +34,10 @@ def ver_tareas():
 # Función para marcar una tarea como completada
 @click.command()
 @click.option('--id', prompt='ID de la tarea', type=int, help='ID de la tarea que deseas marcar como completada.')
+def completar_tarea(id):
+    conn = sqlite3.connect('tareas.db')
+    c = conn.cursor()
+    c.execute("UPDATE tareas SET completada = ? WHERE id = ?", (1, id))
+    conn.commit()
+    click.echo('Tarea marcada como completada correctamente.')
+    conn.close()
