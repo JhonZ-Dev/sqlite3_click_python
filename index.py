@@ -30,3 +30,7 @@ def ver_tareas():
     for tarea in tareas:
         click.echo(f"ID: {tarea[0]}, Nombre: {tarea[1]}, Descripción: {tarea[2]}, Completada: {'Sí' if tarea[3] else 'No'}")
     conn.close()
+
+# Función para marcar una tarea como completada
+@click.command()
+@click.option('--id', prompt='ID de la tarea', type=int, help='ID de la tarea que deseas marcar como completada.')
