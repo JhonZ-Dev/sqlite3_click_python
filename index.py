@@ -55,3 +55,7 @@ def eliminar_tarea(id):
 @click.group()
 def cli():
     pass
+cli.add_command(agregar_tarea)
+cli.add_command(ver_tareas)
+cli.add_command(completar_tarea)
+cli.add_command(eliminar_tarea)
