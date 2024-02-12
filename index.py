@@ -51,3 +51,7 @@ def eliminar_tarea(id):
     conn.commit()
     click.echo('Tarea eliminada correctamente.')
     conn.close()
+# Agrupar todos los comandos en una sola interfaz de línea de comandos
+@click.group()
+def cli():
+    pass
