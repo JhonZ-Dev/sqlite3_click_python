@@ -59,3 +59,7 @@ cli.add_command(agregar_tarea)
 cli.add_command(ver_tareas)
 cli.add_command(completar_tarea)
 cli.add_command(eliminar_tarea)
+# Llamada a la función principal para crear la base de datos si no existe
+if __name__ == '__main__':
+    crear_base_datos()
+    cli()
