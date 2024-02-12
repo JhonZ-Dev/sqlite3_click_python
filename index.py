@@ -8,3 +8,9 @@ def crear_base_datos():
                  (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, completada INTEGER)''')
     conn.commit()
     conn.close()
+
+# Función para agregar una nueva tarea
+@click.command()
+@click.option('--nombre', prompt='Nombre de la tarea', help='Nombre de la tarea.')
+@click.option('--descripcion', prompt='Descripción de la tarea', help='Descripción de la tarea.')
+def agregar_tarea(nombre, descripcion):
