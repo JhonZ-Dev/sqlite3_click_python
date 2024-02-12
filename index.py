@@ -41,3 +41,13 @@ def completar_tarea(id):
     conn.commit()
     click.echo('Tarea marcada como completada correctamente.')
     conn.close()
+# Función para eliminar una tarea
+@click.command()
+@click.option('--id', prompt='ID de la tarea', type=int, help='ID de la tarea que deseas eliminar.')
+def eliminar_tarea(id):
+    conn = sqlite3.connect('tareas.db')
+    c = conn.cursor()
+    c.execute("DELETE FROM tareas WHERE id = ?", (id,))
+    conn.commit()
+    click.echo('Tarea eliminada correctamente.')
+    conn.close()
