@@ -1,4 +1,5 @@
-
+import sqlite3
+import click
 # Función para crear la base de datos
 def crear_base_datos():
     conn = sqlite3.connect('tareas.db')
