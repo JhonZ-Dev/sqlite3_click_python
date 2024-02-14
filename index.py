@@ -20,16 +20,7 @@ def agregar_tarea(nombre, descripcion):
     conn.commit()
     click.echo('Tarea agregada correctamente.')
     conn.close()
-# Función para ver todas las tareas
-@click.command()
-def ver_tareas():
-    conn = sqlite3.connect('tareas.db')
-    c = conn.cursor()
-    c.execute("SELECT * FROM tareas")
-    tareas = c.fetchall()
-    for tarea in tareas:
-        click.echo(f"ID: {tarea[0]}, Nombre: {tarea[1]}, Descripción: {tarea[2]}, Completada: {'Sí' if tarea[3] else 'No'}")
-    conn.close()
+
 
 # Función para marcar una tarea como completada
 @click.command()
